@@ -11,7 +11,7 @@ const TextInput = ({ modal, settings }) => {
       ref={textAreaRef}
       autoFocus
       spellCheck={settings.spellcheck}
-      style={{ fontFamily: settings.font === 'serif' ? 'Merriweather' : 'Montserrat' }}
+      style={{ fontFamily: settings.font === 'serif' ? 'Merriweather' : 'Open Sans' }}
       defaultValue="hello world!"
     />
   );
