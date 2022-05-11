@@ -14,6 +14,7 @@
 - [x] Fix autosave problem where cursor does not focus at end of text
 - [x] Add blur at top of textarea for fadeout effect
 - [ ] Add placeholder/initial text to textarea for new users
+- [ ] Add favicon, metadata and title etc
 - [ ] Improve accessibility
 - [ ] Add function to display message/disable function for mobile/tablet users
 - [ ] Add refs/checking to not autosave if not value has changed
