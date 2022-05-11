@@ -7,6 +7,7 @@ const TextInput = ({ modal, settings, text, setText }) => {
     const intervalID = setInterval(() => {
       setText(textAreaRef.current.value);
     }, 3000);
+    textAreaRef.current.focus();
     return () => clearInterval(intervalID);
   }, []);
 
