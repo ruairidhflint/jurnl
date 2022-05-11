@@ -1,7 +1,7 @@
 import { FiSettings } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-const Settings = ({ settings, setSettings, visible, setVisible }) => (
+const Settings = ({ settings, setSettings, visible, setVisible, download }) => (
   <>
     <button
       type="button"
@@ -93,7 +93,11 @@ const Settings = ({ settings, setSettings, visible, setVisible }) => (
         <div className="settings-buttons">
           <div className="option-group">
             <div className="buttons">
-              <button type="button" className="option-button export">
+              <button
+                type="button"
+                onClick={download}
+                className="option-button export"
+              >
                 Export
               </button>
             </div>

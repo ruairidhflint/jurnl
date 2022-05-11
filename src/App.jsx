@@ -3,6 +3,7 @@ import { useState } from 'react'
 import useLocalStorage from './hooks/useLocalStorage'
 import TextInput from './components/text-input'
 import Settings from './components/settings'
+import downloadFile from './utilities/download'
 import './App.css'
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
   })
   const [text, setText] = useLocalStorage('text', '')
   const [visible, setVisible] = useState(false)
+
+  const save = () => downloadFile(text)
+
   return (
     <div className="App" data-theme={settings.darkmode && 'dark'}>
       <Settings
@@ -20,6 +24,7 @@ function App() {
         setSettings={setSettings}
         visible={visible}
         setVisible={setVisible}
+        download={save}
       />
       <TextInput
         text={text}
