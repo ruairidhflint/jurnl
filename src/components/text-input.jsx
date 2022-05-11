@@ -6,7 +6,7 @@ const TextInput = ({ modal, settings, text, setText }) => {
   useEffect(() => {
     const intervalID = setInterval(() => {
       setText(textAreaRef.current.value)
-    }, 3000)
+    }, 2000)
     textAreaRef.current.focus()
     return () => clearInterval(intervalID)
   }, [])
@@ -18,15 +18,19 @@ const TextInput = ({ modal, settings, text, setText }) => {
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
     }
   }, [modal])
+
   return (
-    <textarea
-      ref={textAreaRef}
-      spellCheck={settings.spellcheck}
-      style={{
-        fontFamily: settings.font === 'serif' ? 'Merriweather' : 'Open Sans',
-      }}
-      defaultValue={text}
-    />
+    <div className="text-container">
+      <div className="fade" />
+      <textarea
+        ref={textAreaRef}
+        spellCheck={settings.spellcheck}
+        style={{
+          fontFamily: settings.font === 'serif' ? 'Merriweather' : 'Open Sans',
+        }}
+        defaultValue={text}
+      />
+    </div>
   )
 }
 

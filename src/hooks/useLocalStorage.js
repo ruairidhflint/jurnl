@@ -6,6 +6,9 @@ const useLocalStorage = (keyName, defaultValue) => {
       const value = window.localStorage.getItem(keyName)
 
       if (value) {
+        if (keyName === 'text' && !JSON.parse(value).length) {
+          return '\n\n'
+        }
         return JSON.parse(value)
       }
       window.localStorage.setItem(keyName, JSON.stringify(defaultValue))

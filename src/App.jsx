@@ -12,8 +12,10 @@ function App() {
     font: 'serif',
     spellcheck: false,
   })
-  const [text, setText] = useLocalStorage('text', '')
+  const [text, setText] = useLocalStorage('text', '\n\n')
   const [visible, setVisible] = useState(false)
+
+  console.log(text)
 
   const save = () => downloadFile(text)
 

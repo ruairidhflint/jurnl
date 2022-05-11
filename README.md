@@ -12,10 +12,10 @@
 - [x] On first load, check and load previous text from localStorage
 - [x] Allow ability to export as `.txt` (or other)?
 - [x] Fix autosave problem where cursor does not focus at end of text
+- [x] Add blur at top of textarea for fadeout effect
 - [ ] Add placeholder/initial text to textarea for new users
 - [ ] Improve accessibility
 - [ ] Add function to display message/disable function for mobile/tablet users
 - [ ] Add refs/checking to not autosave if not value has changed
-- [ ] Add blur either side of textarea for fade-in/fade-out effect
 - [ ] Add tests
 - [ ] Add complete README.md
