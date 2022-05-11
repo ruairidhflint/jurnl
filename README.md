@@ -11,7 +11,7 @@
 - [x] Create function to autosave text to `localStorage`
 - [x] On first load, check and load previous text from localStorage
 - [x] Allow ability to export as `.txt` (or other)?
-- [ ] Fix autosave problem where cursor does not focus at end of text
+- [x] Fix autosave problem where cursor does not focus at end of text
 - [ ] Add placeholder/initial text to textarea for new users
 - [ ] Improve accessibility
 - [ ] Add function to display message/disable function for mobile/tablet users

@@ -12,7 +12,11 @@ const TextInput = ({ modal, settings, text, setText }) => {
   }, [])
 
   useEffect(() => {
-    if (!modal) textAreaRef.current.focus()
+    if (!modal) {
+      textAreaRef.current.focus()
+      textAreaRef.current.setSelectionRange(text.length, text.length)
+      textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
+    }
   }, [modal])
   return (
     <textarea
