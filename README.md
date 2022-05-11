@@ -1,0 +1,18 @@
+### TODO
+
+- [x] Set up Vite/React set up
+- [x] Add ESLint + Prettier
+- [x] Create basic components (text editor, settings)
+- [x] Styling
+- [x] Add ability in settings to change font, serif style and theme
+- [x] Persist settings to `localStorage`
+- [x] Style dark theme
+- [ ] Update sans-serif font
+- [ ] Create function to autosave text to `localStorage`
+- [ ] On first load, check and load previous text from localStorage
+- [ ] Allow ability to export as `.txt` (or other)?
+- [ ] Add function to display message/disable function for mobile/tablet users
+- [ ] Add ability to go full screen (?)
+- [ ] Add blur either side of textarea for fade-in/fade-out effect
+- [ ] Add tests
+- [ ] Add complete README.md

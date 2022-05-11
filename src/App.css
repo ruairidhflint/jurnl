@@ -16,11 +16,13 @@
   --main-text: #fcfcfc;
   --settings-grey: rgba(252, 252, 252, 0.75);
   --modal-underline: rgba(252, 252, 252, 0.1);
+  --selected-button: rgba(7, 218, 197, 1);
+  --modal-background: rgba(255, 255, 255, 0.05);
+  --unselected-button: rgba(42, 42, 42, 1);
 }
 
 * {
   background-color: var(--background);
-  --modal-background: rgba(255, 255, 255, 0.05);
 }
 
 .App {
