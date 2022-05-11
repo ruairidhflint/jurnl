@@ -11,6 +11,8 @@
 - [x] Create function to autosave text to `localStorage`
 - [x] On first load, check and load previous text from localStorage
 - [ ] Allow ability to export as `.txt` (or other)?
+- [ ] Add placeholder/initial text to textarea for new users
+- [ ] Improve accessibility
 - [ ] Add function to display message/disable function for mobile/tablet users
 - [ ] Add ability to go full screen (?)
 - [ ] Add refs/checking to not autosave if not value has changed
