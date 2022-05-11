@@ -6,10 +6,10 @@ import Settings from './components/settings';
 import './App.css';
 
 function App() {
-  const [settings, setSettings] = useLocalStorage('settings', { theme: 'light', font: 'serif', spellcheck: false });
+  const [settings, setSettings] = useLocalStorage('settings', { darkmode: false, font: 'serif', spellcheck: false });
   const [visible, setVisible] = useState(false);
   return (
-    <div className="App">
+    <div className="App" data-theme={settings.darkmode && 'dark'}>
       <Settings settings={settings} setSettings={setSettings} visible={visible} setVisible={setVisible} />
       <TextInput settings={settings} modal={visible} />
     </div>

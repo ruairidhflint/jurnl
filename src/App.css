@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@200&display=swap');
 
+:root {
+  --background: #fcfcfc;
+  --main-text: #212121;
+  --settings-grey: rgba(33, 33, 33, 0.8);
+  --modal-background: rgba(0, 0, 0, 0.05);
+  --box-shadow: rgba(0, 0, 0, 0.08);
+  --selected-button: rgba(33, 115, 242, 1);
+  --unselected-button: rgba(248, 248, 248, 1);
+  --modal-underline: rgba(33, 33, 33, 0.1);
+}
+
+[data-theme='dark'] {
+  --background: rgba(32, 32, 32, 1);
+  --main-text: #fcfcfc;
+  --settings-grey: rgba(252, 252, 252, 0.75);
+  --modal-underline: rgba(252, 252, 252, 0.1);
+}
+
+* {
+  background-color: var(--background);
+  --modal-background: rgba(255, 255, 255, 0.05);
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -16,7 +39,7 @@ textarea {
   resize: none;
   border: none;
   outline: none;
-  color: #212121;
+  color: var(--main-text);
   white-space: pre-wrap;
   font-family: 'Merriweather', serif;
   line-height: calc(1.2rem + 1vw);
@@ -38,7 +61,8 @@ textarea::-webkit-scrollbar {
   font-size: 1.5rem;
   transition: opacity 0.2s ease-in-out;
   cursor: pointer;
-  color: rgba(33, 33, 33, 0.8);
+  color: var(--settings-grey);
+  background-color: var(--background);
 }
 
 .settings-toggle:hover {
@@ -55,7 +79,7 @@ textarea::-webkit-scrollbar {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--modal-background);
   display: flex;
   border-radius: 10px;
   animation: fadein 0.3s;
@@ -78,10 +102,11 @@ textarea::-webkit-scrollbar {
   width: 400px;
   height: 500px;
   border-radius: 10px;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-  background-color: #fcfcfc;
+  -webkit-box-shadow: 0 3px 7px var(--box-shadow);
+  -moz-box-shadow: 0 3px 7px var(--box-shadow);
+  box-shadow: 0 3px 7px var(--box-shadow);
+  background-color: var(--background);
+  color: var(--main-text);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -93,21 +118,22 @@ textarea::-webkit-scrollbar {
   align-items: center;
   width: 100%;
   height: 10%;
-  border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+  border-bottom: 1px solid var(--modal-underline);
 }
 
 .settings-title h1 {
-  color: #212121;
+  color: var(--main-text);
   padding: 0 1rem;
   font-size: 1rem;
 }
 
 .settings-title button {
-  color: #212121;
+  color: var(--main-text);
   border: none;
   outline: none;
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
+  background-color: var(--background);
 }
 
 .settings-title button:hover {
@@ -121,7 +147,7 @@ textarea::-webkit-scrollbar {
   justify-content: space-evenly;
   width: 100%;
   height: 75%;
-  border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+  border-bottom: 1px solid var(--modal-underline);
 }
 
 .buttons {
@@ -135,17 +161,21 @@ textarea::-webkit-scrollbar {
   width: 45%;
   height: 40px;
   border-radius: 10px;
-  background-color: rgba(248, 248, 248, 1);
-  border: 2px solid rgba(248, 248, 248, 1);
-  color: rgba(33, 33, 33, 0.8);
+  background-color: var(--unselected-button);
+  border: 2px solid var(--unselected-button);
+  color: var(--settings-grey);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
+.option-button:hover {
+  opacity: 0.8;
+}
+
 .option-button-selected {
-  background-color: #fcfcfc;
-  border: 2px solid rgba(33, 115, 242, 1);
-  color: rgba(33, 33, 33, 1);
+  background-color: var(--background);
+  border: 2px solid var(--selected-button);
+  color: var(--main-text);
   transition: all 0.2s ease-in-out;
 }
 
@@ -156,7 +186,7 @@ textarea::-webkit-scrollbar {
 .export {
   width: 100%;
   height: 45px;
-  background-color: rgba(33, 115, 242, 1);
+  background-color: var(--selected-button);
   color: white;
   font-size: 1.05rem;
 }

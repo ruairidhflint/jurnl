@@ -25,15 +25,15 @@ const Settings = ({ settings, setSettings, visible, setVisible }) => {
               <div className="buttons">
                 <button
                   type="button"
-                  onClick={() => setSettings({ ...settings, theme: 'light' })}
-                  className={`option-button ${settings.theme === 'light' && 'option-button-selected'}`}
+                  onClick={() => setSettings({ ...settings, darkmode: false })}
+                  className={`option-button ${!settings.darkmode && 'option-button-selected'}`}
                 >
                   Light Theme
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSettings({ ...settings, theme: 'dark' })}
-                  className={`option-button ${settings.theme === 'dark' && 'option-button-selected'}`}
+                  onClick={() => setSettings({ ...settings, darkmode: true })}
+                  className={`option-button ${settings.darkmode && 'option-button-selected'}`}
                 >
                   Dark Theme
                 </button>
