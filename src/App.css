@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@200&display=swap');
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 55%;
+  height: 50%;
+  font-size: calc(0.4rem + 1vw);
+  resize: none;
+  border: none;
+  outline: none;
+  color: #212121;
+  white-space: pre-wrap;
+  font-family: 'Merriweather', serif;
+  line-height: calc(1.2rem + 1vw);
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-toggle {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem 1rem 0 0;
+  font-size: 1.5rem;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+  color: rgba(33, 33, 33, 0.8);
+}
+
+.settings-toggle:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.settings-container {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  border-radius: 10px;
+  animation: fadein 0.3s;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.visible-modal {
+  pointer-events: auto;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.settings-modal {
+  font-family: 'Montserrat', sans-serif;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.settings-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+}
+
+.settings-title h1 {
+  color: #212121;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.settings-title button {
+  color: #212121;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.settings-title button:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 75%;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.option-button {
+  width: 45%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(248, 248, 248, 1);
+  border: 2px solid rgba(248, 248, 248, 1);
+  color: rgba(33, 33, 33, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.option-button-selected {
+  background-color: #fcfcfc;
+  border: 2px solid rgba(33, 115, 242, 1);
+  color: rgba(33, 33, 33, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.settings-buttons {
+  padding: 1rem 0;
+}
+
+.export {
+  width: 100%;
+  height: 45px;
+  background-color: rgba(33, 115, 242, 1);
+  color: white;
+  font-size: 1.05rem;
+}
