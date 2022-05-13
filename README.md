@@ -21,5 +21,5 @@
 - [x] Deploy
 - [x] Fix blur/fade to be a percentage, not fixed height
 - [x] Add esc key binding to close modal
-- [ ] Improve accessibility
+- [x] Improve accessibility
 - [ ] Add complete README.md
