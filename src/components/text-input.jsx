@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const TextInput = ({ modal, settings, text, setText }) => {
+const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
   const textAreaRef = useRef(null)
 
   useEffect(() => {
@@ -12,12 +12,12 @@ const TextInput = ({ modal, settings, text, setText }) => {
   }, [])
 
   useEffect(() => {
-    if (!modal) {
+    if (!settingsModal || !helpModal) {
       textAreaRef.current.focus()
       textAreaRef.current.setSelectionRange(text.length, text.length)
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
     }
-  }, [modal])
+  }, [settingsModal, helpModal])
 
   return (
     <div className="text-container">

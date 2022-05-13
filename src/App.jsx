@@ -33,7 +33,8 @@ function App() {
         text={text}
         setText={setText}
         settings={settings}
-        modal={showSettings}
+        settingsModal={showSettings}
+        helpModal={showHelp}
       />
     </div>
   )

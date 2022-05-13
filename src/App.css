@@ -292,7 +292,6 @@ textarea::-webkit-scrollbar {
 
 .help-title h1 {
   color: var(--main-text);
-  padding: 0 1rem;
   font-size: 1rem;
 }
 
