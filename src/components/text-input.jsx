@@ -8,7 +8,7 @@ const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
   }
 
   useEffect(() => {
-    if (!settingsModal || !helpModal) {
+    if (!settingsModal && !helpModal) {
       textAreaRef.current.focus()
       textAreaRef.current.setSelectionRange(text.length, text.length)
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
