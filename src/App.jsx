@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import useLocalStorage from './hooks/useLocalStorage'
 import TextInput from './components/text-input'
@@ -14,10 +14,18 @@ function App() {
     spellcheck: false,
   })
   const [text, setText] = useLocalStorage('text', '\n\n')
+  const [firstVisit, setFirstVisit] = useLocalStorage('firstVisit', true)
   const [showHelp, setShowHelp] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
 
   const save = () => downloadFile(text)
+
+  useEffect(() => {
+    if (firstVisit) {
+      setShowHelp(true)
+      setFirstVisit(false)
+    }
+  }, [])
 
   return (
     <div className="App" data-theme={settings.darkmode && 'dark'}>

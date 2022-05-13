@@ -13,10 +13,11 @@
 - [x] Allow ability to export as `.txt` (or other)?
 - [x] Fix autosave problem where cursor does not focus at end of text
 - [x] Add blur at top of textarea for fadeout effect
-- [ ] Add placeholder/initial text to textarea for new users
 - [x] Add favicon, metadata and title etc
-- [ ] Improve accessibility
+- [x] Add help modal
+- [x] Auto open help modal on first view
 - [ ] Add function to display message/disable function for mobile/tablet users
 - [ ] Add refs/checking to not autosave if not value has changed
+- [ ] Improve accessibility
 - [ ] Add tests
 - [ ] Add complete README.md
