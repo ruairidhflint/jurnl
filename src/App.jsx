@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 import useLocalStorage from './hooks/useLocalStorage'
 import TextInput from './components/text-input'
@@ -18,6 +18,13 @@ function App() {
   const [showHelp, setShowHelp] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
 
+  const closeModalWithEscapeKey = useCallback((event) => {
+    if (event.key === 'Escape') {
+      setShowHelp(false)
+      setShowSettings(false)
+    }
+  }, [])
+
   const save = () => downloadFile(text)
 
   useEffect(() => {
@@ -25,6 +32,10 @@ function App() {
       setShowHelp(true)
       setFirstVisit(false)
     }
+
+    document.addEventListener('keydown', closeModalWithEscapeKey, false)
+    return () =>
+      document.removeEventListener('keydown', closeModalWithEscapeKey, false)
   }, [])
 
   return (

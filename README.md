@@ -19,7 +19,7 @@
 - [x] Add function to display message/disable function for mobile/tablet users
 - [x] Add refs/checking to not autosave if not value has changed
 - [x] Deploy
-- [ ] Add esc key binding to close modal
-- [ ] Fix blur/fade to be a percentage, not fixed height
+- [x] Fix blur/fade to be a percentage, not fixed height
+- [x] Add esc key binding to close modal
 - [ ] Improve accessibility
 - [ ] Add complete README.md
