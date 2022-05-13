@@ -19,5 +19,5 @@
 - [ ] Add function to display message/disable function for mobile/tablet users
 - [ ] Add refs/checking to not autosave if not value has changed
 - [ ] Improve accessibility
-- [ ] Add tests
+- [ ] Deploy
 - [ ] Add complete README.md
