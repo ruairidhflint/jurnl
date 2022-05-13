@@ -17,7 +17,7 @@
 - [x] Add help modal
 - [x] Auto open help modal on first view
 - [ ] Add function to display message/disable function for mobile/tablet users
-- [ ] Add refs/checking to not autosave if not value has changed
+- [x] Add refs/checking to not autosave if not value has changed
 - [ ] Improve accessibility
 - [ ] Deploy
 - [ ] Add complete README.md

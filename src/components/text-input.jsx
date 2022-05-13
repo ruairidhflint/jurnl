@@ -3,13 +3,9 @@ import { useEffect, useRef } from 'react'
 const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
   const textAreaRef = useRef(null)
 
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      setText(textAreaRef.current.value)
-    }, 2000)
-    textAreaRef.current.focus()
-    return () => clearInterval(intervalID)
-  }, [])
+  const persistText = () => {
+    setText(textAreaRef.current.value)
+  }
 
   useEffect(() => {
     if (!settingsModal || !helpModal) {
@@ -23,6 +19,7 @@ const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
     <div className="text-container">
       <div className="fade" />
       <textarea
+        onKeyDown={persistText}
         ref={textAreaRef}
         spellCheck={settings.spellcheck}
         style={{
