@@ -3,6 +3,7 @@ import { useState } from 'react'
 import useLocalStorage from './hooks/useLocalStorage'
 import TextInput from './components/text-input'
 import Settings from './components/settings'
+import Help from './components/help'
 import downloadFile from './utilities/download'
 import './App.css'
 
@@ -13,26 +14,26 @@ function App() {
     spellcheck: false,
   })
   const [text, setText] = useLocalStorage('text', '\n\n')
-  const [visible, setVisible] = useState(false)
-
-  console.log(text)
+  const [showHelp, setShowHelp] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
 
   const save = () => downloadFile(text)
 
   return (
     <div className="App" data-theme={settings.darkmode && 'dark'}>
+      <Help visible={showHelp} setVisible={setShowHelp} />
       <Settings
         settings={settings}
         setSettings={setSettings}
-        visible={visible}
-        setVisible={setVisible}
+        visible={showSettings}
+        setVisible={setShowSettings}
         download={save}
       />
       <TextInput
         text={text}
         setText={setText}
         settings={settings}
-        modal={visible}
+        modal={showSettings}
       />
     </div>
   )
