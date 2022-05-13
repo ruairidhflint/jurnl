@@ -23,3 +23,5 @@
 - [x] Add esc key binding to close modal
 - [x] Improve accessibility
 - [ ] Add complete README.md
+
+![JURNL](/public/og.png 'JURNL Header')
