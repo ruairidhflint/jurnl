@@ -328,3 +328,9 @@ textarea::-webkit-scrollbar {
   color: var(--selected-button);
   text-decoration: none;
 }
+
+.mobile-message {
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
