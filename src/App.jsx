@@ -63,6 +63,7 @@ function App() {
           settings={settings}
           settingsModal={showSettings}
           helpModal={showHelp}
+          fullScreenState={handle.active}
         />
       </div>
     </FullScreen>

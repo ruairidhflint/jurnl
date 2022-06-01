@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react'
 
-const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
+const TextInput = ({
+  settingsModal,
+  helpModal,
+  settings,
+  text,
+  setText,
+  fullScreenState,
+}) => {
   const textAreaRef = useRef(null)
 
   const persistText = () => {
@@ -13,7 +20,7 @@ const TextInput = ({ settingsModal, helpModal, settings, text, setText }) => {
       textAreaRef.current.setSelectionRange(text.length, text.length)
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
     }
-  }, [settingsModal, helpModal])
+  }, [settingsModal, helpModal, fullScreenState])
 
   return (
     <div className="text-container">
