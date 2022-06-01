@@ -228,6 +228,32 @@ textarea::-webkit-scrollbar {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+.fullscreen-toggle {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem 6rem 0 0;
+  font-size: 1.5rem;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+  color: var(--settings-grey);
+  background-color: var(--background);
+}
+
+.fullscreen-toggle:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.fullscreen-toggle:focus {
+  color: var(--selected-button);
+  transition: all 0.2s ease-in-out;
+}
+
 .help-toggle {
   border: none;
   outline: none;
