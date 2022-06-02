@@ -16,7 +16,7 @@ const TextInput = ({
   text,
   setText,
   fullScreenState,
-}: TextInputProps) => {
+}: TextInputProps): JSX.Element => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
   const persistText = () => {

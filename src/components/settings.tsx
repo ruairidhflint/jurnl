@@ -19,7 +19,7 @@ const Settings = ({
   visible,
   setVisible,
   download,
-}: SettingsProps) => (
+}: SettingsProps): JSX.Element => (
   <>
     <button
       type="button"

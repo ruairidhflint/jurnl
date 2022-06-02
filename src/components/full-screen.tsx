@@ -8,7 +8,7 @@ const FullScreenButton = ({
   active: boolean
   enter: () => Promise<void>
   exit: () => Promise<void>
-}) => {
+}): JSX.Element => {
   if (active) {
     return (
       <button type="button" onClick={exit} className="fullscreen-toggle">

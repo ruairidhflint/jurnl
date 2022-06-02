@@ -7,7 +7,7 @@ const Help = ({
 }: {
   visible: boolean
   setVisible: (a: boolean) => void
-}) => (
+}): JSX.Element => (
   <>
     <button
       type="button"
