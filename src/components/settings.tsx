@@ -1,7 +1,25 @@
 import { FiSettings } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-const Settings = ({ settings, setSettings, visible, setVisible, download }) => (
+interface SettingsProps {
+  settings: {
+    darkmode: boolean
+    font: 'serif' | 'sans-serif'
+    spellcheck: boolean
+  }
+  setSettings: (x: any) => void
+  visible: boolean
+  setVisible: (x: boolean) => void
+  download: () => void
+}
+
+const Settings = ({
+  settings,
+  setSettings,
+  visible,
+  setVisible,
+  download,
+}: SettingsProps): JSX.Element => (
   <>
     <button
       type="button"

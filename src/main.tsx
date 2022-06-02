@@ -5,7 +5,7 @@ import MobileApp from './MobileApp'
 import './index.css'
 import isMobileDevice from './utilities/browser-check'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     {isMobileDevice() ? <MobileApp /> : <App />}
   </React.StrictMode>

@@ -9,7 +9,7 @@ import FullScreenButton from './components/full-screen'
 import downloadFile from './utilities/download'
 import './App.css'
 
-function App() {
+function App(): JSX.Element {
   const handle = useFullScreenHandle()
   const [settings, setSettings] = useLocalStorage('settings', {
     darkmode: false,
@@ -21,14 +21,14 @@ function App() {
   const [showHelp, setShowHelp] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
 
-  const closeModalWithEscapeKey = useCallback((event) => {
+  const closeModalWithEscapeKey = useCallback((event: { key: string }) => {
     if (event.key === 'Escape') {
       setShowHelp(false)
       setShowSettings(false)
     }
   }, [])
 
-  const save = () => downloadFile(text)
+  const save = (): void => downloadFile(text)
 
   useEffect(() => {
     if (firstVisit) {

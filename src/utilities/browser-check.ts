@@ -1,5 +1,5 @@
 /* eslint-disable */
-function isMobileDevice() {
+function isMobileDevice(): boolean {
   let check = false
   ;(function (a) {
     if (
