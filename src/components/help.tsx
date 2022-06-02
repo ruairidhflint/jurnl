@@ -1,7 +1,13 @@
 import { FiHelpCircle } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-const Help = ({ visible, setVisible }) => (
+const Help = ({
+  visible,
+  setVisible,
+}: {
+  visible: boolean
+  setVisible: (a: boolean) => void
+}) => (
   <>
     <button
       type="button"

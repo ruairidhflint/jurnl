@@ -1,5 +1,14 @@
 import { useEffect, useRef } from 'react'
 
+interface TextInputProps {
+  settingsModal: boolean
+  helpModal: boolean
+  settings: any
+  text: string
+  setText: (x: string) => void
+  fullScreenState: any
+}
+
 const TextInput = ({
   settingsModal,
   helpModal,
@@ -7,15 +16,15 @@ const TextInput = ({
   text,
   setText,
   fullScreenState,
-}) => {
-  const textAreaRef = useRef(null)
+}: TextInputProps) => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
   const persistText = () => {
-    setText(textAreaRef.current.value)
+    if (textAreaRef && textAreaRef.current) setText(textAreaRef.current.value)
   }
 
   useEffect(() => {
-    if (!settingsModal && !helpModal) {
+    if (textAreaRef && textAreaRef.current && !settingsModal && !helpModal) {
       textAreaRef.current.focus()
       textAreaRef.current.setSelectionRange(text.length, text.length)
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight

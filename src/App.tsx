@@ -21,7 +21,7 @@ function App() {
   const [showHelp, setShowHelp] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
 
-  const closeModalWithEscapeKey = useCallback((event) => {
+  const closeModalWithEscapeKey = useCallback((event: { key: string }) => {
     if (event.key === 'Escape') {
       setShowHelp(false)
       setShowSettings(false)

@@ -1,4 +1,4 @@
-const downloadFile = (text) => {
+const downloadFile = (text: string) => {
   const blob = new Blob([text], { type: 'txt' })
   const a = document.createElement('a')
   a.download = 'download'
