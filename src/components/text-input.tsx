@@ -7,6 +7,7 @@ interface TextInputProps {
   text: string
   setText: (x: string) => void
   fullScreenState: any
+  firstVisit: boolean
 }
 
 const TextInput = ({
@@ -16,6 +17,7 @@ const TextInput = ({
   text,
   setText,
   fullScreenState,
+  firstVisit
 }: TextInputProps): JSX.Element => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -24,7 +26,7 @@ const TextInput = ({
   }
 
   useEffect(() => {
-    if (textAreaRef && textAreaRef.current && !settingsModal && !helpModal) {
+    if (textAreaRef && textAreaRef.current && !settingsModal && !helpModal && !firstVisit) {
       textAreaRef.current.focus()
       textAreaRef.current.setSelectionRange(text.length, text.length)
       textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight

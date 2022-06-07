@@ -64,6 +64,7 @@ function App(): JSX.Element {
           settingsModal={showSettings}
           helpModal={showHelp}
           fullScreenState={handle.active}
+          firstVisit={firstVisit}
         />
       </div>
     </FullScreen>
