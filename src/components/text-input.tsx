@@ -22,10 +22,6 @@ const TextInput = ({
 }: TextInputProps) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
-  const persistText = () => {
-    if (textAreaRef && textAreaRef.current) setText(textAreaRef.current.value)
-  }
-
   useEffect(() => {
     if (
       textAreaRef &&
@@ -44,13 +40,13 @@ const TextInput = ({
     <div className="text-container">
       <div className="fade" />
       <textarea
-        onKeyDown={persistText}
         ref={textAreaRef}
         spellCheck={settings.spellcheck}
         style={{
           fontFamily: settings.font === 'serif' ? 'Merriweather' : 'Open Sans',
         }}
-        defaultValue={text}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
     </div>
   )
