@@ -9,7 +9,7 @@ import FullScreenButton from './components/full-screen'
 import downloadFile from './utilities/download'
 import './App.css'
 
-function App(): JSX.Element {
+function App() {
   const handle = useFullScreenHandle()
   const [settings, setSettings] = useLocalStorage('settings', {
     darkmode: false,

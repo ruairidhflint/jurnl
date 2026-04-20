@@ -1,6 +1,6 @@
 import './App.css'
 
-function MobileApp(): JSX.Element {
+function MobileApp() {
   return (
     <div className="App">
       <p className="mobile-message">
