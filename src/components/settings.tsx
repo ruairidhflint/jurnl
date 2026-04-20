@@ -1,13 +1,10 @@
 import { FiSettings } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
+import type { Settings as SettingsType, SetSettings } from '../types'
 
 interface SettingsProps {
-  settings: {
-    darkmode: boolean
-    font: 'serif' | 'sans-serif'
-    spellcheck: boolean
-  }
-  setSettings: (x: any) => void
+  settings: SettingsType
+  setSettings: SetSettings
   visible: boolean
   setVisible: (x: boolean) => void
   download: () => void

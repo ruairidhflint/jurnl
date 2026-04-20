@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react'
+import type { Settings } from '../types'
 
 interface TextInputProps {
   settingsModal: boolean
   helpModal: boolean
-  settings: any
+  settings: Settings
   text: string
   setText: (x: string) => void
-  fullScreenState: any
+  fullScreenState: boolean
   firstVisit: boolean
 }
 
