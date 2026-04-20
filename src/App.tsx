@@ -42,11 +42,16 @@ function App() {
       setShowHelp(true)
       setFirstVisit(false)
     }
+    // Mount-only: we want the firstVisit value at mount, not to re-run when
+    // setFirstVisit flips it below.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
+  useEffect(() => {
     document.addEventListener('keydown', closeModalWithEscapeKey, false)
     return () =>
       document.removeEventListener('keydown', closeModalWithEscapeKey, false)
-  }, [])
+  }, [closeModalWithEscapeKey])
 
   return (
     <FullScreen handle={handle}>

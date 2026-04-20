@@ -23,18 +23,12 @@ const TextInput = ({
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    if (
-      textAreaRef &&
-      textAreaRef.current &&
-      !settingsModal &&
-      !helpModal &&
-      !firstVisit
-    ) {
-      textAreaRef.current.focus()
-      textAreaRef.current.setSelectionRange(text.length, text.length)
-      textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight
-    }
-  }, [settingsModal, helpModal, fullScreenState])
+    const el = textAreaRef.current
+    if (!el || settingsModal || helpModal || firstVisit) return
+    el.focus()
+    el.setSelectionRange(el.value.length, el.value.length)
+    el.scrollTop = el.scrollHeight
+  }, [settingsModal, helpModal, fullScreenState, firstVisit])
 
   return (
     <div className="text-container">
