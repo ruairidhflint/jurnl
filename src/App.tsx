@@ -7,17 +7,24 @@ import Settings from './components/settings'
 import Help from './components/help'
 import FullScreenButton from './components/full-screen'
 import downloadFile from './utilities/download'
+import type { Settings as SettingsType } from './types'
 import './App.css'
+
+const BLANK_TEXT = '\n\n'
 
 function App() {
   const handle = useFullScreenHandle()
-  const [settings, setSettings] = useLocalStorage('settings', {
+  const [settings, setSettings] = useLocalStorage<SettingsType>('settings', {
     darkmode: false,
     font: 'serif',
     spellcheck: false,
   })
-  const [text, setText] = useLocalStorage('text', '\n\n')
-  const [firstVisit, setFirstVisit] = useLocalStorage('firstVisit', true)
+  const [storedText, setText] = useLocalStorage<string>('text', BLANK_TEXT)
+  const text = storedText.length ? storedText : BLANK_TEXT
+  const [firstVisit, setFirstVisit] = useLocalStorage<boolean>(
+    'firstVisit',
+    true,
+  )
   const [showHelp, setShowHelp] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
 
