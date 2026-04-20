@@ -5,9 +5,3 @@ export type Settings = {
 }
 
 export type SetSettings = (s: Settings) => void
-
-declare global {
-  interface Window {
-    opera: any
-  }
-}

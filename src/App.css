@@ -27,6 +27,7 @@
 .App {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,8 +103,8 @@ textarea::-webkit-scrollbar {
 .settings-modal {
   z-index: 9999;
   font-family: 'Montserrat', sans-serif;
-  width: 400px;
-  height: 500px;
+  width: min(400px, calc(100vw - 2rem));
+  height: min(500px, calc(100dvh - 2rem));
   border-radius: 10px;
   -webkit-box-shadow: 0 3px 7px var(--box-shadow);
   -moz-box-shadow: 0 3px 7px var(--box-shadow);
@@ -206,6 +207,13 @@ textarea::-webkit-scrollbar {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .text-container {
+    width: calc(100% - 2rem);
+    height: 70%;
+  }
+}
+
 .fade {
   width: 100%;
   height: 15%;
@@ -305,8 +313,8 @@ textarea::-webkit-scrollbar {
 .help-modal {
   z-index: 9999;
   font-family: 'Montserrat', sans-serif;
-  width: 360px;
-  height: 400px;
+  width: min(360px, calc(100vw - 2rem));
+  height: min(400px, calc(100dvh - 2rem));
   border-radius: 10px;
   -webkit-box-shadow: 0 3px 7px var(--box-shadow);
   -moz-box-shadow: 0 3px 7px var(--box-shadow);
@@ -364,10 +372,4 @@ textarea::-webkit-scrollbar {
 .help-options a {
   color: var(--selected-button);
   text-decoration: none;
-}
-
-.mobile-message {
-  padding: 0 2rem;
-  text-align: center;
-  font-size: 1.2rem;
 }
